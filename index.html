@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Tailwind Version</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/style.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* Custom animations untuk typing effect */
+        @keyframes cursor {
+            to {
+                border-left: 3px solid rgb(239, 68, 68);
+            }
+        }
+        
+        @keyframes words {
+            0%, 50% {
+                content: "Front End Developer";
+            }
+            51%, 100% {
+                content: "Web Developer";
+            }
+        }
+        
+        .typing-text span::before {
+            content: "Web Developer";
+            color: rgb(239, 68, 68);
+            animation: words 4s infinite;
+        }
+        
+        .typing-text span::after {
+            content: "";
+            background-color: transparent;
+            position: absolute;
+            width: calc(30% + 8px);
+            height: 100%;
+            animation: cursor 0.7s infinite;
+        }
+    </style>
+</head>
+<body class="w-full text-white bg-gradient-to-b from-[rgba(19,5,5,0.98)] via-black to-[rgba(19,5,5,0.98)]">
+    
+    <!-- Navbar -->
+    <nav class="w-full h-20 flex justify-between items-center fixed top-0 left-0 shadow-[0_2px_10px_black] bg-gradient-to-b from-black to-[rgba(19,5,5,0.98)] z-1000 px-10 lg:px-20">
+        <!-- Logo -->
+        <div class="text-2xl md:text-2xl lg:text-3xl font-extrabold">
+            Portfolio
+        </div>
+        
+        <!-- Hamburger Menu (Mobile) -->
+        <div class="hamburger-menu text-white text-2xl md:hidden cursor-pointer z-1001" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        
+        <!-- Navigation List -->
+        <ul class="navbar-list hidden md:flex items-center list-none gap-4 lg:gap-6">
+            <li><a href="#home" class="no-underline text-white text-lg lg:text-xl font-semibold hover:text-red-900 transition-colors duration-300">Home</a></li>
+            <li><a href="#about" class="no-underline text-white text-lg lg:text-xl font-semibold hover:text-red-900 transition-colors duration-300">About</a></li>
+            <li><a href="#projects" class="no-underline text-white text-lg lg:text-xl font-semibold hover:text-red-900 transition-colors duration-300">Projects</a></li>
+            <li><a href="#skills" class="no-underline text-white text-lg lg:text-xl font-semibold hover:text-red-900 transition-colors duration-300">Skilss</a></li>
+            <li><a href="#contact" class="no-underline text-white text-lg lg:text-xl font-semibold hover:text-red-900 transition-colors duration-300">Contact</a></li>
+        </ul>
+        
+        <!-- Mobile Menu -->
+        <ul id="mobileMenu" class="hidden fixed top-20 right-0 bg-[rgba(0,0,0,0.98)] p-5 w-48 flex-col items-start gap-4 shadow-[-5px_5px_15px_rgb(239,68,68)] border-l-2 border-red-600">
+            <li class="w-full"><a href="#home" class="text-white text-lg block py-2 hover:text-red-900 transition-colors duration-300">Home</a></li>
+            <li class="w-full"><a href="#about" class="text-white text-lg block py-2 hover:text-red-900 transition-colors duration-300">About</a></li>
+            <li class="w-full"><a href="#projects" class="text-white text-lg block py-2 hover:text-red-900 transition-colors duration-300">Projects</a></li>
+            <li class="w-full"><a href="#skills" class="text-white text-lg block py-2 hover:text-red-900 transition-colors duration-300">Skills</a></li>
+            <li class="w-full"><a href="#contact" class="text-white text-lg block py-2 hover:text-red-900 transition-colors duration-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="w-full min-h-screen scroll-mt-24">
+        <div class="flex justify-between items-center flex-wrap flex-col-reverse md:flex-row max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 pt-32 md:pt-40 lg:pt-48 pb-20 overflow-hidden min-h-screen">
+            
+            <!-- Main Content -->
+            <div class="main-content w-full md:w-[55%] mb-12 md:mb-0 text-center md:text-left">
+                <p class="text-white text-2xl sm:text-3xl lg:text-4xl font-semibold mb-3 leading-tight">
+                    Hello, I'm
+                </p>
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-3 leading-tight">
+                    <span class="text-red-600">Doni</span> Maulana
+                </h2>
+                <h3 class="text-xl sm:text-2xl lg:text-4xl mb-5 leading-tight typing-text">
+                    <span class="relative"></span>
+                </h3>
+                <h4 class="text-sm lg:text-base leading-relaxed mb-8">
+                    Passionate about creating beautiful and functional websites
+                </h4>
+                
+                <!-- Social Media -->
+                <div class="sosmed flex gap-6 text-2xl my-8 justify-center md:justify-start">
+                    <a href="https://www.instagram.com/donimaulana13" class="text-white hover:text-red-900 transition-colors duration-300 hover:scale-125">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://github.com/donimaulanaa" class="text-white hover:text-red-900 transition-colors duration-300 hover:scale-125">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/doni.maulana.687000" class="text-white hover:text-red-900 transition-colors duration-300 hover:scale-125">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="mailto:doni27maulana@gmail.com" class="text-white hover:text-red-900 transition-colors duration-300 hover:scale-125">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+                </div>
+                
+                <!-- Button -->
+                <button class="w-40 h-10 text-sm font-semibold rounded-2xl border-none cursor-pointer bg-white text-black hover:bg-red-900 hover:text-white transition-all duration-300 hover:scale-95">
+                    Download CV
+                </button>
+            </div>
+            
+            <!-- Profile Image -->
+            <div class="profil-image w-full md:w-auto flex justify-center">
+                <img src="./img/don.jpeg" 
+                     alt="Profile" 
+                     class="block w-48 h-48 mb-8 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-[350px] lg:h-[350px] object-cover object-bottom rounded-full shadow-[0_0_5px_rgb(255,0,0)] hover:shadow-[0_0_25px_rgb(255,0,0)] hover:scale-105 cursor-pointer transition-all duration-200">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="w-full min-h-screen scroll-mt-5 py-20">
+        <div class="about-section text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-8">About Me</h2>
+            
+            <div class="about-card flex justify-center items-center flex-wrap gap-12 max-w-full min-h-full mx-5 md:mx-12 px-3 py-5 md:p-12 overflow-hidden bg-[rgba(0,0,0,0.4)] rounded-3xl shadow-[0_0_5px_rgb(255,0,0)] hover:shadow-[0_0_25px_rgb(255,0,0)] transition-shadow duration-300">
+                
+                <!-- About Image -->
+                <img src="./img/donnn.jpeg" 
+                     alt="About" 
+                     class="block w-56 h-56 md:w-64 md:h-64 lg:w-[330px] lg:h-[330px] object-cover shadow-[0_0_10px_rgb(167,167,167)] object-center rounded-xl">
+                
+                <!-- About Description -->
+                <div class="max-w-full md:max-w-[500px]">
+                    <h4 class="text-base sm:text-sm md:text-lg leading-relaxed">
+                        Hi! I'm Doni Maulana, a passionate Front End Developer based in Jakarta, Indonesia. I specialize in creating beautiful, responsive, and user-friendly websites using HTML, CSS, and JavaScript.
+                        <br>
+                        I am a graduate of Informatics Engineering from Universitas Pamulang, which has provided me with a strong foundation in programming, web development, and problem-solving skills.
+                        <br>    
+                        I love turning ideas into reality through clean code and modern design. When I'm not coding, you can find me exploring new web technologies and staying up-to-date with the latest trends in web development.
+                        <br>
+                        Let's build something amazing together!
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section>
+        <div>
+            <h2>Projects</h2>
+        </div>
+    </section>
+
+    <script>
+        // Toggle Mobile Menu
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        }
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            if (!hamburger.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            }
+        });
+    </script>
+</body>
+</html>
